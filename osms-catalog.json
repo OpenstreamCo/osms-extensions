@@ -18,6 +18,14 @@
       "name": "Steam Big Picture on start",
       "description": "Opens Steam in Big Picture mode when a streaming session starts, if Steam is installed.",
       "tags": ["steam", "hooks", "example"]
+    },
+    {
+      "repo": "mlopezsegura/RDPAutoPatch",
+      "id": "rdpautopatch",
+      "name": "RDPAutoPatch (multi-RDP)",
+      "description": "Keeps the Remote Desktop service patched with TermWrap so Windows client editions accept several RDP sessions at once, with automatic fallback to Windows' termsrv.dll.",
+      "notice": "Not part of OpenStreamMS. The Windows client license doesn't allow several remote sessions at once; the supported route is Windows Server with the RDS role and user CALs. Installing it is your own responsibility.",
+      "tags": ["rdp", "multi-session"]
     }
   ]
 }
