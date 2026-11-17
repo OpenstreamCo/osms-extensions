@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "id": "steam-big-picture",
+  "name": "Steam Big Picture on start",
+  "description": "Opens Steam in Big Picture mode when a streaming session starts, if Steam is installed.",
+  "author": "OpenstreamCo",
+  "homepage": "https://github.com/OpenstreamCo/osms-extensions",
+  "license": "MIT",
+  "hooks": { "sessionStart": "hooks/session-start.ps1", "runAs": "user", "timeoutSec": 30 }
+}

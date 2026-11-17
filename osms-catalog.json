@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "name": "OpenStreamMS",
+  "description": "Official OpenStreamMS extensions.",
+  "extensions": [
+    {
+      "repo": "OpenstreamCo/osms-extensions",
+      "path": "extensions/sessions-overview",
+      "id": "sessions-overview",
+      "name": "Sessions overview",
+      "description": "A dashboard tab with every session and seat at a glance. Also a minimal example of an extension tab.",
+      "tags": ["dashboard", "example"]
+    },
+    {
+      "repo": "OpenstreamCo/osms-extensions",
+      "path": "extensions/steam-big-picture",
+      "id": "steam-big-picture",
+      "name": "Steam Big Picture on start",
+      "description": "Opens Steam in Big Picture mode when a streaming session starts, if Steam is installed.",
+      "tags": ["steam", "hooks", "example"]
+    }
+  ]
+}

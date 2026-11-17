@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sessions overview</title>
+<style>
+  :root { color-scheme: light dark; --fg: #e5e7eb; --muted: #9ca3af; --bg: transparent; --line: rgba(148,163,184,.25); }
+  @media (prefers-color-scheme: light) { :root { --fg: #111827; --muted: #4b5563; } }
+  body { margin: 0; padding: 16px; font: 14px/1.4 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+  h2 { font-size: 15px; margin: 18px 0 8px; color: var(--muted); font-weight: 600; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  li { display: flex; justify-content: space-between; gap: 12px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; }
+  .state { color: var(--muted); }
+  .Running { color: #22c55e; }
+  .Error { color: #ef4444; }
+  .empty { color: var(--muted); }
+</style>
+</head>
+<body>
+<h2>Sessions</h2><ul id="sessions"><li class="empty">…</li></ul>
+<h2>Seats</h2><ul id="seats"><li class="empty">…</li></ul>
+<script>
+  // La pestaña está aislada: pide el contexto al panel (solo lectura) cada pocos segundos.
+  function render(id, items) {
+    const ul = document.getElementById(id);
+    ul.replaceChildren(...(items.length ? items : [null]).map(it => {
+      const li = document.createElement('li');
+      if (!it) { li.className = 'empty'; li.textContent = '—'; return li; }
+      const name = document.createElement('span'); name.textContent = it.name + (it.local ? ' (local)' : '');
+      const st = document.createElement('span'); st.className = 'state ' + it.state; st.textContent = it.state;
+      li.append(name, st); return li;
+    }));
+  }
+  window.addEventListener('message', ev => {
+    if (!ev.data || ev.data.osms !== 'context') return;
+    render('sessions', ev.data.sessions || []);
+    render('seats', ev.data.seats || []);
+  });
+  const ask = () => window.parent.postMessage({ osms: 'context' }, '*');
+  ask(); setInterval(ask, 3000);
+</script>
+</body>
+</html>

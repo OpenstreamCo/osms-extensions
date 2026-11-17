@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "id": "sessions-overview",
+  "name": "Sessions overview",
+  "description": "A dashboard tab with every session and seat at a glance.",
+  "author": "OpenstreamCo",
+  "homepage": "https://github.com/OpenstreamCo/osms-extensions",
+  "license": "MIT",
+  "panel": { "title": "Overview", "entry": "panel/index.html" }
+}
