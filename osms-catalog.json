@@ -9,7 +9,9 @@
       "id": "sessions-overview",
       "name": "Sessions overview",
       "description": "A dashboard tab with every session and seat at a glance. Also a minimal example of an extension tab.",
-      "tags": ["dashboard", "example"]
+      "tags": ["dashboard", "example"],
+      "icon": "extensions/sessions-overview/icon.svg",
+      "categories": ["monitoring"]
     },
     {
       "repo": "OpenstreamCo/osms-extensions",
@@ -17,7 +19,9 @@
       "id": "steam-big-picture",
       "name": "Steam Big Picture on start",
       "description": "Opens Steam in Big Picture mode when a streaming session starts, if Steam is installed.",
-      "tags": ["steam", "hooks", "example"]
+      "tags": ["steam", "hooks", "example"],
+      "icon": "extensions/steam-big-picture/icon.svg",
+      "categories": ["games"]
     },
     {
       "repo": "mlopezsegura/RDPAutoPatch",
@@ -25,7 +29,9 @@
       "name": "RDPAutoPatch (multi-RDP)",
       "description": "Keeps the Remote Desktop service patched with TermWrap so Windows client editions accept several RDP sessions at once, with automatic fallback to Windows' termsrv.dll.",
       "notice": "Not part of OpenStreamMS. The Windows client license doesn't allow several remote sessions at once; the supported route is Windows Server with the RDS role and user CALs. Installing it is your own responsibility.",
-      "tags": ["rdp", "multi-session"]
+      "tags": ["rdp", "multi-session"],
+      "icon": "icons/rdpautopatch.svg",
+      "categories": ["remote-desktop"]
     }
   ]
 }
