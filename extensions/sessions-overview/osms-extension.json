@@ -6,5 +6,7 @@
   "author": "OpenstreamCo",
   "homepage": "https://github.com/OpenstreamCo/osms-extensions",
   "license": "MIT",
+  "icon": "icon.svg",
+  "categories": ["monitoring"],
   "panel": { "title": "Overview", "entry": "panel/index.html" }
 }

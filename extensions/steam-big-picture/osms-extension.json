@@ -6,5 +6,7 @@
   "author": "OpenstreamCo",
   "homepage": "https://github.com/OpenstreamCo/osms-extensions",
   "license": "MIT",
+  "icon": "icon.svg",
+  "categories": ["games"],
   "hooks": { "sessionStart": "hooks/session-start.ps1", "runAs": "user", "timeoutSec": 30 }
 }
